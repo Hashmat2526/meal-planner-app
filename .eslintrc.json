@@ -1,0 +1,33 @@
+{
+  "extends": "next/core-web-vitals",
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["react"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "no-tabs": ["error", { "allowIndentationTabs": true }],
+        "no-console": "warn",
+        "no-undef": "off",
+        "func-names": "off",
+        "quotes": ["warn", "backtick"],
+        "camelcase": "error",
+        "react/prop-types": 0,
+        "react/no-unescaped-entities": 0,
+        "react/jsx-key": "off",
+        "no-trailing-spaces": "warn",
+        "no-unused-vars": [
+          1,
+          { "args": "after-used", "argsIgnorePattern": "^_" }
+        ]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}
