@@ -23,13 +23,13 @@ export default function Home() {
   const { family_id, family_members } = useReadLocalStorage("user")
 
   const [isLoading, setIsLoading] = useState(true)
-  const [testimonialsData, setTestimonialsData] = useState([])
+  const [mealPlansData, setMealPlansData] = useState([])
 
   const fetchData = async (url) => {
     try {
       const response = await fetch(url)
       const res = await response.json()
-      const data = res.split(`json`)[1].split("```")[0]
+      const data = res
       return JSON.parse(data) // Return the response data
     } catch (error) {
       console.error("Error fetching data:", error.message)
@@ -59,7 +59,7 @@ export default function Home() {
           meals,
         }
       })
-      setTestimonialsData(mealsData)
+      setMealPlansData(mealsData)
       setIsLoading(false)
     }, 1000)
 
@@ -70,14 +70,14 @@ export default function Home() {
     return <Spinner position="absolute" />
   }
 
-  console.log(`testimonialsData---`, testimonialsData)
+  console.log(`mealPlansData---`, mealPlansData)
 
   return (
     <div className="ml-6 mr-4">
       <h1 className="text-lg font-bold">Meals Plan</h1>
       <div className="my-4 grid grid-cols-4 w-full gap-4 overflow-auto h-full">
-        {testimonialsData.length > 0 ? (
-          testimonialsData.map((item, index) => (
+        {mealPlansData.length > 0 ? (
+          mealPlansData.map((item, index) => (
             <ProfileCard key={index} data={item} />
           ))
         ) : (

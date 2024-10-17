@@ -1,1 +1,1 @@
-export const BACK_API_URL = `https://b4103af7-c8f5-4d62-a25a-16aa41e33eee-00-2g8aj48enu0mc.sisko.replit.dev`
+export const BACK_API_URL = `https://7bbd5bac-bb52-4846-89ae-270aa990c182-00-24kmhb8dj4pdx.sisko.replit.dev`
